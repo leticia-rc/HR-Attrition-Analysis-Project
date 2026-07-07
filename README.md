@@ -108,7 +108,7 @@ FROM (
 ORDER BY demographic, attrition_rate DESC;
 ```
 
-For the full analysis, see [`attrition_analysis.sql`](queries/attrition_analysis.sql)
+For the full analysis, see [`HR-Attrition-Analysis.sql`](queries/HR-Attrition-Analysis.sql)
 
 ## Project Structure
 ```
