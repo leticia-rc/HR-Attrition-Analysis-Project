@@ -213,7 +213,7 @@ than preventing burnout in the first place.
 2. On **compensation**, the priority should not be across-the-board raises, but targeted reviews for
 **mid-range earners in the $7k–$12k bracket**, likely experienced professionals, who are the most
 exposed to external market offers and the hardest to replace.
-3. Finally, the **Sales department** warrants a dedicated retention plan, given its disproportionately
+3. The **Sales department** warrants a dedicated retention plan, given its disproportionately
 high attrition rate. This could include clearer career progression paths, revised target
 structures, or more frequent performance conversations to keep employees engaged before they
 decide to leave.
