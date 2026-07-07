@@ -1,6 +1,6 @@
 # HR Employee Attrition Analysis
 
-<img width="6000" height="3677" alt="campaign-creators-qCi_MzVODoU-unsplash" src="https://github.com/user-attachments/assets/5cef61c9-2b69-48b5-8999-6ce46d00fc9b" />
+<img width="7360" height="4912" alt="scott-graham-5fNmWej4tAA-unsplash" src="https://github.com/user-attachments/assets/152ea44b-d6b0-4c19-9b55-a217d9c870c3" />
 
 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -111,7 +111,16 @@ ORDER BY demographic, attrition_rate DESC;
 For the full analysis, see [`attrition_analysis.sql`](queries/attrition_analysis.sql)
 
 ## Project Structure
-hr-attrition-analysis/ │ ├── assets/ # Dashboard screenshots ├── queries/ # SQL scripts used for exploration │ └── attrition_analysis.sql ├── HR-Employee-Attrition.csv ├── dashboard.pbix └── README.md
+```
+hr-attrition-analysis/
+│
+├── assets/                  - Dashboard screenshots
+├── queries/                 - SQL scripts used for exploration
+│   └── attrition_analysis.sql
+├── HR-Employee-Attrition.csv
+├── dashboard.pbix
+└── README.md
+```
 
 ## How to Use
 1. Clone this repository
@@ -155,27 +164,36 @@ corners of each page.
 ## Dashboard Preview
 
 ### Overview
-<img width="1165" height="655" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/14ab8eae-1653-4fd9-8adf-08250a6419e3" />
+
+<img width="1165" height="655" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/e89d7768-34ba-4593-b217-45711248316d" />
 
 ------------------
 
 ### Demographics Analysis
-<img width="1160" height="655" alt="Screenshot (102)" src="https://github.com/user-attachments/assets/205f6014-83eb-4c20-8818-4e5287192e49" />
+
+<img width="1160" height="655" alt="Screenshot (102)" src="https://github.com/user-attachments/assets/ed0ee9ab-c3d0-4db6-a546-b0874b4f26a7" />
+
 
 ------------------
 
 ### Work Factors Analysis
-<img width="1160" height="650" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/6abfce2e-4c25-4fc0-bebb-6a25995394aa" />
+
+<img width="1160" height="650" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/ad0441f3-3a66-4e2e-8304-af42a74e4d8a" />
+
 
 ------------------
 
 ### Satisfaction Metrics
-<img width="1161" height="661" alt="Screenshot (109)" src="https://github.com/user-attachments/assets/028d4dd4-be21-4741-ae59-65dc8a06bcf7" />
+
+<img width="1161" height="661" alt="Screenshot (109)" src="https://github.com/user-attachments/assets/5c31c09b-45f1-4de3-86eb-a3f10fdaa14f" />
+
 
 ------------------
 
 ### Risk Profile
-<img width="1161" height="665" alt="Screenshot (108)" src="https://github.com/user-attachments/assets/692ef2ce-fe61-43b7-9ea9-bbba5e6229cd" />
+
+<img width="1160" height="662" alt="Risk Profile" src="https://github.com/user-attachments/assets/91c65e66-b915-424e-a98e-4d36b16cfc39" />
+
 
 ------------------
 
