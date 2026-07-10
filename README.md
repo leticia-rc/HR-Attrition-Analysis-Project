@@ -41,74 +41,9 @@ The main variables explored in this analysis include: Attrition, OverTime, Depar
 - The last aspect analyzed was **monthly income**. Employees earning **below 5k** represent the **highest-risk group**, with an attrition rate of **21.76%**. However, the data reveals a non-linear pattern, the rate drops to 9.44% among those earning between 5k and 7k, rises again to **15%** in the **7k–12k range**, and falls back to 8.70% for the highest earners above 12k. This inconsistency suggests that mid-range earners, likely experienced professionals, may be more exposed to competitive market offers, indicating the company faces retention challenges beyond compensation alone.
 
 ## Technologies Used
-- **MySQL** — data exploration and attrition metrics calculation using
-  CTEs, UNION ALL to consolidate multiple dimensions into a single result,
-  conditional aggregation with CASE WHEN inside SUM(), inline bucketing
-  of continuous variables inside GROUP BY, and data quality checks for
-  NULLs, empty strings, and duplicates.
+- MySQL
+- Power BI
 
-- **Power BI** — interactive dashboard with DAX measures for attrition
-  KPIs using CALCULATE for context-modified aggregations, DIVIDE for
-  safe attrition rate calculations, and dynamic filtering across
-  demographic, work, and satisfaction dimensions, calculated columns with SWITCH for composite risk scoring and custom sort ordering across employee risk categories.
-
-## SQL Sample
-Analyzing the demographics metrics (Age, Gender and Marital Status )
-
-```sql
- SELECT Age, COUNT(*) as total
-FROM employees
-GROUP BY Age
-ORDER BY Age;
-
-
-WITH base AS (
-    SELECT 
-        Age,
-        Gender,
-        MaritalStatus,
-        CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END AS employees_left,
-        CASE WHEN Attrition = 'No'  THEN 1 ELSE 0 END AS employees_stay
-    FROM employees
-)
-
-SELECT 
-    demographic,
-    category,
-    employees_left,
-    employees_stay,
-    CAST((employees_left * 100.0) / (employees_left + employees_stay) AS DECIMAL(5,2)) AS attrition_rate
-FROM (
-    (SELECT 
-        'Age Group' AS demographic,
-        CASE
-            WHEN Age BETWEEN 18 AND 25 THEN 'Early Career'
-            WHEN Age BETWEEN 26 AND 35 THEN 'Peak Career'
-            WHEN Age BETWEEN 36 AND 45 THEN 'Mid Career'
-            ELSE 'Senior'
-        END AS category,
-        SUM(employees_left) AS employees_left,
-        SUM(employees_stay) AS employees_stay
-    FROM base
-    GROUP BY category)
-
-    UNION ALL
-
-    (SELECT 'Gender', Gender, SUM(employees_left), SUM(employees_stay)
-    FROM base
-    GROUP BY Gender)
-
-    UNION ALL
-
-    (SELECT 'Marital Status', MaritalStatus, SUM(employees_left), SUM(employees_stay)
-    FROM base
-    GROUP BY MaritalStatus)
-
-) AS demographic_summary
-ORDER BY demographic, attrition_rate DESC;
-```
-
-For the full analysis, see [`HR-Attrition-Analysis.sql`](queries/HR-Attrition-Analysis.sql)
 
 ## Project Structure
 ```
